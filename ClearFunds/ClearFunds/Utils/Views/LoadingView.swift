@@ -18,6 +18,7 @@ struct LoadingView: View {
                 ForEach(0..<3) { i in
                     Circle()
                         .frame(width: 10, height: 10)
+                        .foregroundStyle(Color.primary())
                         .scaleEffect(scale ? 1 : 0.5)
                         .animation(.easeInOut(duration: 0.6).repeatForever().delay(Double(i) * 0.2), value: scale)
                 }
@@ -25,7 +26,7 @@ struct LoadingView: View {
             .onAppear { scale.toggle() }
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("Loading")
+        .accessibilityLabel(AppStrings.loadingAccessibilityLabel.text)
     }
 }
 

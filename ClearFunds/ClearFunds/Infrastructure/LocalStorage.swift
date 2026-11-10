@@ -28,9 +28,9 @@ final class LocalStorage {
         
         var errorDescription: String? {
             switch self {
-            case .emptyFields: String(localized: "Enter your name and password.")
-            case .wrongCredentials: String(localized: "Incorrect name or password.")
-            case .hashingFailed: String(localized: "Unable to save the credentials.")
+            case .emptyFields: String(localized: AppStrings.loginEmptyFields.text)
+            case .wrongCredentials: String(localized: AppStrings.loginWrongCredentials.text)
+            case .hashingFailed: String(localized: AppStrings.loginSaveFailed.text)
             }
         }
     }

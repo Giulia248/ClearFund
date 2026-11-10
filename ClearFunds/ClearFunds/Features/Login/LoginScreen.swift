@@ -19,7 +19,7 @@ struct LoginScreen: View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Name", text: $viewModel.name)
+                    TextField(text: $viewModel.name) { Text(AppStrings.loginName.text) }
                         .textContentType(.username)
                         .textInputAutocapitalization(.never)
                         .autocorrectionDisabled()
@@ -27,7 +27,7 @@ struct LoginScreen: View {
                         .submitLabel(.next)
                         .onSubmit { focusedField = .password }
 
-                    SecureField("Password", text: $viewModel.password)
+                    SecureField(AppStrings.loginPassword.text, text: $viewModel.password)
                         .textContentType(.password)
                         .focused($focusedField, equals: .password)
                         .submitLabel(.go)
@@ -40,11 +40,11 @@ struct LoginScreen: View {
                 }
 
                 Section {
-                    Button("Log in", action: viewModel.submit)
+                    Button(AppStrings.loginLogIn.text, action: viewModel.submit)
                         .frame(maxWidth: .infinity)
                 }
             }
-            .navigationTitle("ClearFund")
+            .navigationTitle(AppStrings.appName.text)
         }
     }
 }
