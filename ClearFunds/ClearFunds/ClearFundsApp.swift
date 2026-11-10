@@ -11,7 +11,7 @@ import SwiftUI
 struct ClearFundsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainAppScreen()
         }
     }
 }
